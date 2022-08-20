@@ -1,0 +1,119 @@
+* {
+	font-family: impact;
+}
+.container {
+	width: 600px;
+	height: 600px;
+	border: 1px white solid;
+	margin-right: auto;
+	margin-left: auto;
+	background: linear-gradient(black, lightgray);
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+
+}
+
+.btn {
+	color: white;
+	position: relative;
+	top: 20px;
+	left: 33px;
+	font-size: 1.3em;
+	width: 130px;
+	height: 130px;
+	padding: 30px;
+	border-radius: 100%;
+	transform: scale(1);
+	transition-duration: 500ms;
+}
+.btn:hover {
+	transform: scale(1.1);
+}
+.btn--blue {
+	background: linear-gradient(lightskyblue, gray);
+}
+.btn--green {
+	background: linear-gradient(greenyellow, gray);
+}
+.btn--red {
+	background: linear-gradient(red, gray);
+}
+.lightsaber {
+	grid-column: 2;
+}
+.lightsaber__gard {
+	position: relative;
+	bottom: 550px;
+	transform: scale(0.5);
+	animation: 1.5s ease-out rotatesaber;
+	/*animation: 1.5s ease-out translatesaber;*/
+}
+@keyframes rotatesaber {
+	0% {	transform:scale(0.5) rotate(0deg);
+	}
+	100% { transform:scale(0.5) rotate(720deg);
+
+	}
+}
+@keyframes translatesaber {
+	0% {	transform:scale(0.5) translateX(-500px);
+	}
+	100% { transform:scale(0.5) translateX(0px);
+
+	}
+}
+
+.lightsaber__light--blue {
+	position: relative;
+	bottom: -58px;
+	left: 2px;
+	width: 14px;
+	height: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	background: lightblue;
+	border-radius: 50px 50px 0px 0px;
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+	transition-duration: 700ms;
+	filter: blur(2px);
+}
+.lightsaber__light--green {
+	position: relative;
+	bottom: 215px;
+	left: 2px;
+	width: 14px;
+	height: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	background: greenyellow;
+	border-radius: 50px 50px 0px 0px;
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+	transition-duration: 700ms;
+	filter: blur(2px);
+}
+.lightsaber__light--red {
+	position: relative;
+	bottom: 480px;
+	left: 2px;
+	width: 14px;
+	height: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	background: red;
+	border-radius: 50px 50px 0px 0px;
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+	transition-duration: 700ms;
+	filter: blur(2px);
+}
+.btn--blue:active ~ .lightsaber > .lightsaber__light--blue {
+		transform: scaleY(1.0);
+}
+.btn--green:active ~ .lightsaber > .lightsaber__light--green {
+		transform: scaleY(1.0);
+}
+.btn--red:active ~ .lightsaber > .lightsaber__light--red {
+		transform: scaleY(1.0);
+}
